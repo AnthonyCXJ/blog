@@ -1,17 +1,21 @@
 ---
 layout: home
 
-title: home
+title: Home
 
 hero:
   name: 张无忌
-  text: 那时候车马慢 一生只够爱一人
+  text: 那个曾经的少年回来了
+  tagline: Believe in yourself, there's nothing you can't do！
+  image:
+    src: /home.svg
+    alt: logo
   actions:
     - theme: brand
       text: 更多详情
       link: /daily/
     - theme: alt
-      text: GitHub
+      text: 访问我的GitHub
       link: https://github.com/AnthonyCXJ
     - theme: alt
       text: 关于我
