@@ -7,9 +7,9 @@ hero:
   name: 张无忌
   text: 那个曾经的少年回来了
   tagline: Believe in yourself, there's nothing you can't do！
-  image:
-    src: /home.svg
-    alt: logo
+  # image:
+  #   src: /home.svg
+  #   alt: logo
   actions:
     - theme: brand
       text: 更多详情
