@@ -3,9 +3,10 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: '张无忌的Blog',
   description: '张无忌的Blog',
+  appearance: true,
   base: '/blog/',
+  lastUpdated: true,
 
-  // lastUpdated: true,
   themeConfig: {
     siteTitle: '张无忌的博客',
     logo: '/logo.svg',
@@ -19,26 +20,26 @@ export default defineConfig({
       { text: '关于我', link: '/me' }
     ],
     // 社交链接
-    // socialLinks: [{ icon: 'github', link: 'https://github.com/AnthonyCXJ' }],
+    socialLinks: [{ icon: 'github', link: 'https://github.com/AnthonyCXJ' }],
 
     // 侧边栏 Sidebar
-    sidebar: {
-      // 生活感悟
-      // '/life/': [
-      //   {
-      //     text: '生活感悟',
-      //     items: [{ text: '子菜单', link: '/life/' }]
-      //   }
-      // ],
+    // sidebar: {
+    //   // 生活感悟
+    //   '/life/': [
+    //     {
+    //       text: '生活感悟',
+    //       items: [{ text: '子菜单', link: '/life/' }]
+    //     }
+    //   ]
 
-      // 我的笔记
-    }
+    //   // 我的笔记
+    // }
   },
-  // vite: {
-  //   server: {
-  //     host: true,
-  //     port: 3000,
-  //     open: true
-  //   }
-  // }
+  vite: {
+    server: {
+      host: true,
+      port: 3000,
+      open: true
+    }
+  }
 })

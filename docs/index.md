@@ -1,11 +1,11 @@
 ---
 layout: home
 
-title: Home
+title: 张无忌的Blog
 
 hero:
   name: 张无忌
-  text: 那个曾经的少年回来了
+  text: 那时候车马慢 一生只够爱一人
   tagline: Believe in yourself, there's nothing you can't do！
   # image:
   #   src: /home.svg
