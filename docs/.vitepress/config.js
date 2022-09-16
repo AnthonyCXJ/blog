@@ -5,7 +5,7 @@ module.exports = {
   description: '张无忌的Blog',
   appearance: true,
   // theme: 'reco',
-  base: '/blog/',
+  base: '/docs/',
   lastUpdated: '上次更新',
   locales: {
     '/': {
