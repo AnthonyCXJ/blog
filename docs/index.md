@@ -5,8 +5,8 @@ title: 张无忌的Blog
 
 hero:
   name: 张无忌
-  text: 那时候车马慢 一生只够爱一人
-  tagline: Believe in yourself, there's nothing you can't do！
+  # text: 那时候车马慢 一生只够爱一人
+  tagline: 那时候车马慢 一生只够爱一人！
   # image:
   #   src: /home.svg
   #   alt: logo
