@@ -14,5 +14,8 @@
   "devDependencies": {
     "vitepress": "1.0.0-alpha.14",
     "vue": "^3.2.39"
+  },
+  "dependencies": {
+    "vuepress-theme-reco": "^1.6.14"
   }
 }
