@@ -6,7 +6,7 @@ module.exports = {
   appearance: true,
   // theme: 'reco',
   base: '/blog/',
-  lastUpdated: true,
+  lastUpdated: '上次更新',
   locales: {
     '/': {
       lang: 'zh-CN'
