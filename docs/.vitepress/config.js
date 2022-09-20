@@ -1,10 +1,9 @@
 import { defineConfig } from 'vitepress'
 
-module.exports = {
+export default defineConfig({
   title: '张无忌的Blog',
   description: '张无忌的Blog',
   appearance: true,
-  // theme: 'reco',
   base: '/blog/',
   lastUpdated: '上次更新',
   themeConfig: {
@@ -23,17 +22,22 @@ module.exports = {
     socialLinks: [{ icon: 'github', link: 'https://github.com/AnthonyCXJ' }],
 
     // 侧边栏 Sidebar
-    // sidebar: {
-    //   // 生活感悟
-    //   '/life/': [
-    //     {
-    //       text: '生活感悟',
-    //       items: [{ text: '子菜单', link: '/life/' }]
-    //     }
-    //   ]
-
-    //   // 我的笔记
-    // }
+    sidebar: {
+      // 我的笔记
+      '/daily/': [
+        {
+          text: 'vue3',
+          items: [{ text: '子菜单', link: '/daily/vue3.md' }]
+        }
+      ],
+      // 生活感悟
+      '/life/': [
+        {
+          text: '生活感悟',
+          items: [{ text: '子菜单', link: '/life/' }]
+        }
+      ]
+    }
   },
   vite: {
     server: {
@@ -42,4 +46,4 @@ module.exports = {
       // open: true
     }
   }
-}
+})
