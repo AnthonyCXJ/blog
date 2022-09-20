@@ -5,14 +5,19 @@ export default defineConfig({
   description: '张无忌的Blog',
   appearance: true,
   base: '/blog/',
+  head: [
+    [
+      'link', { rel: 'icon', href: '/logo.svg' }
+    ]
+  ],
   lastUpdated: '上次更新',
   themeConfig: {
-    siteTitle: '张无忌的博客',
+    // siteTitle: '张无忌的博客',
     logo: '/logo.svg',
      // 顶部菜单
     nav: [
       { text: '首页', link: '/index.md' },
-      { text: '我的笔记', link: '/daily/index.md' },
+      { text: '我的笔记', link: '/notes/index.md' },
       { text: '前端总结', link: '/javascript' },
       { text: '生活感悟', link: '/life/index.md' },
       { text: '我的掘金', link: 'https://juejin.cn/user/1926000101300776' },
@@ -24,10 +29,16 @@ export default defineConfig({
     // 侧边栏 Sidebar
     sidebar: {
       // 我的笔记
-      '/daily/': [
+      '/notes/': [
         {
           text: 'vue3',
-          items: [{ text: '子菜单', link: '/daily/vue3.md' }]
+          items: [
+            { text: 'API解析', link: '/notes/vue3/index.md' }]
+        },
+        {
+          text: 'typescript',
+          items: [
+            { text: '泛型', link: '/notes/typescript/index.md' }]
         }
       ],
       // 生活感悟
