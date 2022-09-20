@@ -4,10 +4,10 @@
 set -e
 
 # 生成静态文件
-npm run docs:build
+yarn docs:build
 
 # 进入生成的文件夹
-cd docs/.vuepress/dist
+cd docs/.vitepress/dist
 
 git init
 git add -A

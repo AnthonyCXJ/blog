@@ -5,14 +5,8 @@ module.exports = {
   description: '张无忌的Blog',
   appearance: true,
   // theme: 'reco',
-  base: '/docs/',
+  base: '/blog/',
   lastUpdated: '上次更新',
-  locales: {
-    '/': {
-      lang: 'zh-CN'
-    }
-  },
-
   themeConfig: {
     siteTitle: '张无忌的博客',
     logo: '/logo.svg',
