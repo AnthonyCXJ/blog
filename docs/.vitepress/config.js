@@ -33,12 +33,19 @@ export default defineConfig({
         {
           text: 'vue3',
           items: [
-            { text: 'API解析', link: '/notes/vue3/index.md' }]
+            { text: 'API解析', link: '/notes/vue3/index.md' },
+            { text: 'setup语法糖', link: '/notes/vue3/setup语法糖.md' }
+          ]
         },
         {
           text: 'typescript',
           items: [
             { text: '泛型', link: '/notes/typescript/index.md' }]
+        },
+        {
+          text: 'echarts',
+          items: [
+            { text: '物料', link: '/notes/echarts/echarts物料.md' }]
         }
       ],
       // 生活感悟
