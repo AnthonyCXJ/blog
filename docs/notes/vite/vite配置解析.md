@@ -1,5 +1,18 @@
-## config
 
+### 使用path需要额外的装 @type/node 这个包
+```
+  yarn add @type/node -D
+```
+### 使用path
+```typescript
+  import { defineConfig } from 'vite' 
+  import path from 'node'
+  export default defineConfig({
+    const srcUrl = path.resolve(__dirname, '/src')
+  })
+```
+
+## Vite Config 详解
 ```typescript
 // 帮手函数，这样不用 jsdoc 注解也可以获取类型提示
 import { defineConfig } from 'vite' 
