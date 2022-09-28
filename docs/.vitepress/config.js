@@ -27,18 +27,24 @@ export default defineConfig({
       // 我的笔记
       '/notes/': [
         {
-          text: 'vue3',
+          text: 'Vue3',
           items: [
             { text: 'API解析', link: '/notes/vue3/index.md' },
             { text: 'setup语法糖技巧', link: '/notes/vue3/setup语法糖技巧.md' }
           ]
         },
         {
-          text: 'typescript',
+          text: 'Vite',
+          items: [
+            { text: 'Vite配置解析', link: '/notes/vite/vite配置解析.md' }
+          ]
+        },
+        {
+          text: 'Typescript',
           items: [{ text: '泛型', link: '/notes/typescript/index.md' }]
         },
         {
-          text: 'echarts',
+          text: 'Echarts',
           items: [{ text: '物料', link: '/notes/echarts/echarts物料.md' }]
         }
       ],
