@@ -5,16 +5,12 @@ export default defineConfig({
   description: '张无忌的Blog',
   appearance: true,
   base: '/blog/',
-  head: [
-    [
-      'link', { rel: 'icon', href: '/logo.svg' }
-    ]
-  ],
+  head: [['link', { rel: 'icon', href: '/logo.svg' }]],
   lastUpdated: '上次更新',
   themeConfig: {
     // siteTitle: '张无忌的博客',
     logo: '/logo.svg',
-     // 顶部菜单
+    // 顶部菜单
     nav: [
       { text: '首页', link: '/index.md' },
       { text: '我的笔记', link: '/notes/index.md' },
@@ -34,18 +30,16 @@ export default defineConfig({
           text: 'vue3',
           items: [
             { text: 'API解析', link: '/notes/vue3/index.md' },
-            { text: 'setup语法糖', link: '/notes/vue3/setup语法糖.md' }
+            { text: 'setup语法糖技巧', link: '/notes/vue3/setup语法糖技巧.md' }
           ]
         },
         {
           text: 'typescript',
-          items: [
-            { text: '泛型', link: '/notes/typescript/index.md' }]
+          items: [{ text: '泛型', link: '/notes/typescript/index.md' }]
         },
         {
           text: 'echarts',
-          items: [
-            { text: '物料', link: '/notes/echarts/echarts物料.md' }]
+          items: [{ text: '物料', link: '/notes/echarts/echarts物料.md' }]
         }
       ],
       // 生活感悟
@@ -60,7 +54,7 @@ export default defineConfig({
   vite: {
     server: {
       host: true,
-      port: 3000,
+      port: 3000
       // open: true
     }
   }
