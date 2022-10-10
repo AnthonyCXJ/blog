@@ -27,6 +27,12 @@ export default defineConfig({
       // 我的笔记
       '/notes/': [
         {
+          text: '编码规范',
+          items: [
+            { text: '前端编码规范', link: '/notes/code-standard/编码规范.md' }
+          ]
+        },
+        {
           text: 'Vue3',
           items: [
             { text: 'API解析', link: '/notes/vue3/index.md' },
