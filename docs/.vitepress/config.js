@@ -13,7 +13,7 @@ export default defineConfig({
     // 顶部菜单
     nav: [
       { text: '首页', link: '/index.md' },
-      { text: '我的笔记', link: '/notes/vue3/setup语法糖技巧.md' },
+      { text: '我的笔记', link: '/notes/code-standard/编码规范.md' },
       { text: '前端总结', link: '/javascript' },
       { text: '生活感悟', link: '/life/index.md' },
       { text: '我的掘金', link: 'https://juejin.cn/user/1926000101300776' },
