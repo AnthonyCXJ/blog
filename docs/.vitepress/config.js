@@ -47,7 +47,7 @@ export default defineConfig({
         },
         {
           text: 'Typescript',
-          items: [{ text: '泛型', link: '/notes/typescript/index.md' }]
+          items: [{ text: '高级用法', link: '/notes/typescript/index.md' }]
         },
         {
           text: 'Echarts',
