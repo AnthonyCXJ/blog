@@ -1,6 +1,6 @@
 ## TypeScript 高级用法
 
-### 一、类型
+## 一、类型
 
   ##### 1.1 unknown
   unknown 指的是 **不可预先定义的类型** ，在很多场景下，它可以替代 any 的功能同时保留静态检查的能力  
@@ -19,7 +19,7 @@
   在 TS 中，void 和 undefined 功能高度类似  
   void 和 undefined 类型最大的区别是，你可以理解为 undefined 是 void 的一个子集，当你对函数返回值并不在意时，使用 void 而不是 undefined
 
-### 二、运算符
+## 二、运算符
   #### 2.1 非空断言运算符 !
   这个运算符可以用在变量名或者函数名之后，用来强调对应的元素是非 null | undefined 的  
   ```typescript
@@ -62,7 +62,7 @@
   let num: number = 12_345.6_789
   console.log(num)  // 12345.6789
   ```
-### 三、操作符
+## 三、操作符
   #### 3.1 键值获取 keyof
   keyof 可以获取一个类型所有键值，返回一个联合类型，如下：  
   ```typescript
@@ -94,3 +94,5 @@
   type PersonKey = keyof typeof me  // name || age
   ```
   > typeof 只能用在具体的 *对象* 上，这与 js 中的 typeof 是一致的，并且它会根据左侧值自动决定应该执行哪种行为 
+
+  
