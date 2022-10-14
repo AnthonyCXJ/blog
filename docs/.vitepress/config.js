@@ -33,6 +33,12 @@ export default defineConfig({
           ]
         },
         {
+          text: '常用组件封装',
+          items: [
+            { text: 'Element', link: '/notes/component-lib/Element常用组件封装.md' }
+          ]
+        },
+        {
           text: 'Vue3',
           items: [
             { text: 'API解析', link: '/notes/vue3/index.md' },

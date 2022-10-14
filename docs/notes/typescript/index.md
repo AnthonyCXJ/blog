@@ -64,7 +64,7 @@
   ```
 ## 三、操作符
   #### 3.1 键值获取 keyof
-  keyof 可以获取一个类型所有键值，返回一个联合类型，如下：  
+  keyof 可以获取一个类型所有键值，返回一个联合类型，例🌰  
   ```typescript
   type Person = {
     name: string
@@ -80,13 +80,13 @@
   ```
 
   #### 3.2 实例类型获取 typeof
-  typeof 是获取一个对象/实例的 <font color="#ff7980">类型</font>，如下：  
+  typeof 是获取一个对象/实例的 <font color="#ff7980">类型</font>，例🌰  
   ```typescript
   const me: Person = { name: '张无忌', age: 18 }
   type p = typeof me    // { name: string, age: number | undefined }
   const you: typeof me = { name: 'you', age: 69 }  // 可以通过编译
   ```
-  typeof 可以和 keyof 一起使用(因为 typeof 是返回一个类型嘛)，如下：  
+  typeof 可以和 keyof 一起使用(因为 typeof 是返回一个类型嘛)，例🌰  
   ```typescript
 
   // 这两种写法等价
@@ -95,4 +95,155 @@
   ```
   > typeof 只能用在具体的 *对象* 上，这与 js 中的 typeof 是一致的，并且它会根据左侧值自动决定应该执行哪种行为 
 
-  
+  #### 3.3 遍历属性 in
+  in 只能用在类型的定义中，可以对枚举类型进行遍历，例🌰
+  ```typescript
+  // 这个类型可以将任何类型的键值转化成number类型
+  type TypeToNumber<T> = {
+    [key in keyof T]: number
+  }
+
+  const obj: TypeToNumber<Person> = { name: 10, age: 10 }
+  ```
+  总结起来 in 的语法格式，例🌰  
+  > 用法: [ 自定义变量名 in 枚举类型 ]: 类型
+
+## 四、泛型
+  #### 4.1 基本使用
+  泛型可以用在普通类型定义，类定义、函数定义上，例🌰
+  ```typescript
+  // 普通类型定义
+  type Dog<T> = {
+    name: string
+    type: T
+  }
+  // 普通类型使用
+  const dog: Dog<number> = {
+    name: '滚滚',
+    type: 20
+  }
+
+  // 类定义
+  class Cat<T> {
+    private type T
+    constructor(type: T) {
+      this.type = type
+    }
+  }
+
+  // 类使用
+  const cat: Cat<number> = new Cat<number>(20)  // 或简写 const cat = new Cat(20)
+
+  // 函数定义
+  function swipe<T, U>(value: [T, U]): [U, T] {
+    return [value[1], value[0]]
+  }
+
+  // 函数使用
+  swipe<Cat<number>, Dog<number>>([cat, dog])   // 或简写 swipe([cat, dog])
+  ```
+
+  泛型的语法格式简单总结如下
+   > 类型名<泛型列表> 具体类型定义
+
+  #### 4.2 泛型推导与默认值
+  上面提到了，我们可以简化对泛型类型定义的书写，因为TS会自动根据变量定义时的类型推导出变量类型，这一般是发生在函数调用的场合的  
+  ```typescript
+  type Dog<T> = { 
+    name: string
+    type: T
+  }
+
+  function adopt<T>(dog: Dog<T>) {
+    return dog
+  }
+
+  const dog = { name: 'ww', type: 'hsq' }  // 这里按照Dog类型的定义一个type为string的对象
+  adopt(dog)  // Pass: 函数会根据入参类型推断出type为string
+  ```
+  泛型默认值的语法格式简单总结
+    > 泛型名 = 默认类型 
+
+  #### 4.3 泛型约束
+  有的时候，我们可以不用关注泛型具体的类型，如：  
+  ```typescript
+  function fill<T>(length: number, value: T): T[] {
+    return new Array(length).fill(value)
+  }
+  ```
+  如果需要限定类型，这时候使用extends关键字即可 
+  ```typescript
+  function sum<T extends number>(value: T[]): number {
+    let count = 0
+    value.forEach(v => count += v)
+    return count
+  }
+
+  // 这里的意思是、约束U一定是T中key类型中的子集
+  function pick<T, U extends keyof T>() {}
+  ```
+  extends 的语法格式简单总结如下，注意下面的类型既可以是一般意义上的类型也可以是泛型
+  > 泛型名 extends 类型
+
+  #### 4.4 泛型条件
+  ```typescript
+  // 这里便不限制 T 一定要是 U 的子类型，如果是 U 子类型，则将 T 定义为 X 类型，否则定义为 Y 类型
+  T extends U ? X : Y
+  ```
+  extends 的语法格式可以扩展为
+  > 泛型名A extends 类型B ? 类型C: 类型D
+
+## 五、泛型工具
+  #### Partial<T>
+  此工具的作用就是将泛型中全部属性变为可选的
+  ```typescript
+  type Partial<T> = {
+    [P in keyof T]?: T[P]
+  }
+
+  type Animal = {
+    name: string
+    age: number
+    eat: () => number
+  }
+
+  // type PartialAnimate = {
+  //   name?: string
+  //   age?: number
+  //   eat?: () => number
+  // }
+  // 等价于上面的写法
+  type PartialAnimate = Partial<Animate>
+  const dog: PartialAnimate = { name: 'dog' }   // 属性全部可选后，可以只赋值部分属性了
+  ```
+
+  #### Record<K, T>
+  此工具的作用是将 K 中所有属性值转化为 T 类型，我们常用它来申明一个普通 object 对象
+
+  > keyof any 对应的类型为number | string | symbol
+  > 也就是可以做对象键(专业说法叫索引 index)的类型集合
+  ```typescript
+  type Record<K extends keyof any, T> = {
+    [key in K]: T
+  }
+
+  // 例🌰
+  const obj: Record<string, string> = {
+    'name': '张无忌',
+    'tag': '打工人'
+  }
+  ```
+
+#### Pick<T, K>
+此工具的作用是将 T 类型中的 K 键列表提取出来，生成新的子键值对类型
+
+```typescript
+type Pick<T, K extends keyof T> = {
+  [P in K]: T[P]
+}
+
+const bird: Pick<Animal, 'name' | 'age'> = {
+  name: 'bird',
+  age: 1
+}
+```
